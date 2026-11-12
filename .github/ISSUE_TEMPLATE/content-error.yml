@@ -1,0 +1,58 @@
+name: Content error
+description: Report a technical inaccuracy, wrong formula, misattributed source, or misleading explanation.
+title: "[Content error]: "
+labels: ["content-error"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping keep RAG-Universe accurate. Please be as specific as possible.
+  - type: input
+    id: location
+    attributes:
+      label: File and section
+      description: Path to the file and the heading where the error appears.
+      placeholder: "02-mathematical-foundations/cosine-similarity.md, section 'Worked example'"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of error
+      options:
+        - Incorrect explanation or concept
+        - Incorrect formula or calculation
+        - Code bug or code that does not run
+        - Incorrect or missing citation
+        - Outdated information (API, library, or practice)
+        - Misleading or unclear wording
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What the content currently says
+      description: Quote or summarize the problematic content.
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What you believe is correct
+      description: Explain the correction.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting sources
+      description: Links to papers, official documentation, or other authoritative sources.
+    validations:
+      required: false
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to open a pull request with the fix.

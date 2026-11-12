@@ -1,0 +1,26 @@
+name: Broken link
+description: Report a link that no longer works or points to the wrong place.
+title: "[Broken link]: "
+labels: ["broken-link"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: File containing the link
+      placeholder: "resources/courses.md"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: The broken link
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: replacement
+    attributes:
+      label: Suggested replacement (if known)
+      description: Prefer official or archived sources.
+    validations:
+      required: false

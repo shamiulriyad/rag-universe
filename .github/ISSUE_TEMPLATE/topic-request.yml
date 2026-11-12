@@ -1,0 +1,81 @@
+name: Topic request
+description: Propose a new lesson, module topic, project, or paper review.
+title: "[Topic request]: "
+labels: ["topic-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before proposing a topic, please check [ROADMAP.md](../blob/main/ROADMAP.md), including the Topic Ownership table, to make sure it is not already planned.
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      placeholder: "e.g. Late chunking"
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: Which module should it belong to?
+      options:
+        - 01 RAG Fundamentals
+        - 02 Mathematical Foundations
+        - 03 Data Ingestion and Processing
+        - 04 Document Chunking
+        - 05 Embeddings
+        - 06 Vector Databases
+        - 07 Information Retrieval
+        - 08 Advanced Retrieval Techniques
+        - 09 Context Engineering and Generation
+        - 10 RAG Evaluation
+        - 11 Advanced RAG Architectures
+        - 12 RAG Optimization
+        - 13 Production RAG
+        - 14 Research and Paper Reproduction
+        - Practical Projects
+        - Research Papers (paper review)
+        - Not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - Beginner
+        - Intermediate
+        - Advanced
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs in the learning path
+      description: What does a learner gain? How does it connect to existing modules?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Key sources
+      description: Original papers or official documentation for the topic.
+    validations:
+      required: true
+  - type: dropdown
+    id: maturity
+    attributes:
+      label: Maturity of the technique
+      options:
+        - Established (well-studied, widely adopted)
+        - Common practice (widely used, less formally studied)
+        - Emerging (recent, results vary)
+        - Research (proposed in a paper, limited independent validation)
+    validations:
+      required: true
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to write this content following the topic template.
